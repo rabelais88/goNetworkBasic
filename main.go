@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"goNetworkBasic/fetchBasic"
 	"goNetworkBasic/logWriter"
+	"goNetworkBasic/statusCheck"
 	"io"
 	"io/ioutil"
 )
@@ -21,4 +22,10 @@ func main() {
 	fmt.Println("total byte", len(ctx), "byte")
 	lw := logWriter.LogWriter{}
 	io.Copy(lw, bytes.NewReader(ctx))
+	links := []string{
+		`https://google.com`,
+		`https://naver.com`,
+		`https://amazon.com`,
+	}
+	statusCheck.Check(links)
 }
