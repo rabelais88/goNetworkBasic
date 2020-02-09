@@ -22,6 +22,7 @@ func main() {
 	fmt.Println("total byte", len(ctx), "byte")
 	lw := logWriter.LogWriter{}
 	io.Copy(lw, bytes.NewReader(ctx))
+
 	links := []string{
 		`https://google.com`,
 		`https://naver.com`,
