@@ -45,7 +45,7 @@ func Check(links []string) bool {
 		fmt.Println(`goroutines: `, runtime.NumGoroutine())
 	}
 
-	go func() {
+	go func() { // !!this should placed above channel range receiver
 		wg.Wait()
 		close(c)
 	}()
